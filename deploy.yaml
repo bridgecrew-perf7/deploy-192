@@ -28,7 +28,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: repo.nky.wjcloud.co.kr/nky/hello:3.0
+      - image: repo.nky.wjcloud.co.kr/nky/hello:4.0
         name: nginx
         ports:
         - containerPort: 80
@@ -41,3 +41,58 @@ spec:
             memory: 1Gi
       imagePullSecrets:
       - name: nky
+---
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa
+spec:
+  maxReplicas: 4
+  metrics:
+  - resource:
+      name: cpu
+      target:
+        averageUtilization: 50
+        type: Utilization
+    type: Resource
+  - resource:
+      name: memory
+      target:
+        averageUtilization: 50
+        type: Utilization
+    type: Resource
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginx-deployment
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig":     {
+      "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:109465883927:certificate/f2086a80-315d-444f-9cbb-4b41c62c9c47
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/subnets: subnet-00aa94471c8cb14b6, subnet-0a97d31576394da1f
+    alb.ingress.kubernetes.io/target-type: instance
+    kubernetes.io/ingress.class: alb
+  labels:
+    app: external-ingress
+  name: ingress-alb
+spec:
+  rules:
+  - host: test1.nky.wjcloud.co.kr
+    http:
+      paths:
+      - backend:
+          serviceName: ssl-redirect
+          servicePort: use-annotation
+        path: /*
+      - backend:
+          serviceName: nginx-service
+          servicePort: 80
+        path: /*
