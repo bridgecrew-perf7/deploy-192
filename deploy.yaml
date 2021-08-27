@@ -28,7 +28,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: repo.nky.wjcloud.co.kr/nky/hello:161
+      - image: repo.nky.wjcloud.co.kr/nky/hello:build_number
         name: nginx
         ports:
         - containerPort: 80
