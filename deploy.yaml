@@ -35,10 +35,10 @@ spec:
         resources:
           limits:
             cpu: "1.5"
-            memory: 2Gi
+            memory: 128Mi
           requests:
             cpu: "1"
-            memory: 1Gi
+            memory: 64Mi
       imagePullSecrets:
       - name: nky
 ---
