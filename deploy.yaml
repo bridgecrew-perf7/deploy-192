@@ -28,17 +28,17 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: repo.nky.wjcloud.co.kr/nky/hello:7.0
+      - image: repo.nky.wjcloud.co.kr/nky/hello:3.0
         name: nginx
         ports:
         - containerPort: 80
         resources:
           limits:
             cpu: "1.5"
-            memory: 128Mi
+            memory: 2Gi
           requests:
             cpu: "1"
-            memory: 64Mi
+            memory: 1Gi
       imagePullSecrets:
       - name: nky
 ---
