@@ -16,7 +16,7 @@ metadata:
     
 spec:
   rules:
-    - host: test1.nky.wjcloud.co.kr
+    - host: tech.nky.wjcloud.co.kr
       http:
          paths:
           - path: /*
