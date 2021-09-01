@@ -28,7 +28,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: repo.nky.wjcloud.co.kr/nky/hello:10.9
+      - image: repo.nky.wjcloud.co.kr/nky/hello:11.0
         name: nginx
         ports:
         - containerPort: 80
@@ -85,7 +85,7 @@ metadata:
   name: ingress-alb
 spec:
   rules:
-  - host: test1.nky.wjcloud.co.kr
+  - host: tech.nky.wjcloud.co.kr
     http:
       paths:
       - backend:
