@@ -3,7 +3,5 @@ resources:
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
-- name: repo.nky.wjcloud.co.kr/nky/hello
-  newTag: "12.2"
 - name: repo.nky.wjcloud.co.kr/nky/wj_tech
   newTag: "1.0"
