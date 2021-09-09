@@ -5,3 +5,5 @@ kind: Kustomization
 images:
 - name: repo.nky.wjcloud.co.kr/nky/hello
   newTag: "12.2"
+- name: repo.nky.wjcloud.co.kr/nky/wj_tech
+  newTag: "1.0"
