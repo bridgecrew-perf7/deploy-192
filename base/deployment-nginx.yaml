@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: tech-deployment
   labels:
     app: nginx
 spec:
@@ -18,16 +18,16 @@ spec:
       - name: nky
       containers:
       - name: nginx
-        image: repo.nky.wjcloud.co.kr/nky/hello:build_number
+        image: repo.nky.wjcloud.co.kr/nky/wj_tech:build_number
 
         ports:
         - containerPort: 80
         resources:
          requests:
-           cpu: "500m"
-
-           memory: "0.5Gi"
-         limits:
            cpu: "1000m"
 
            memory: "1Gi"
+         limits:
+           cpu: "1500m"
+
+           memory: "1.5Gi"
