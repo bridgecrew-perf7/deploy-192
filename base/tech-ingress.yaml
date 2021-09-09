@@ -28,5 +28,5 @@ spec:
               servicePort: use-annotation
           - path: /*
             backend:
-              serviceName: nginx-service
+              serviceName: tech-service
               servicePort: 80
