@@ -29,16 +29,16 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: repo.nky.wjcloud.co.kr/nky/wj-tech:3.0
+      - image: repo.nky.wjcloud.co.kr/nky/wj-tech:1.0
         name: nginx
         ports:
         - containerPort: 80
         resources:
           limits:
-            cpu: 1500m
+            cpu: 800m
             memory: 1.5Gi
           requests:
-            cpu: 1000m
+            cpu: 500m
             memory: 1Gi
       imagePullSecrets:
       - name: nky
