@@ -19,9 +19,8 @@ spec:
       containers:
       - name: nginx
         image: repo.nky.wjcloud.co.kr/nky/wj-tech:build_number
-
         ports:
-        - containerPort: 80
+        - containerPort: 80        
         resources:
          requests:
            cpu: "500m"
