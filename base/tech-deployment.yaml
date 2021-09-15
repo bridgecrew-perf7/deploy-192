@@ -18,7 +18,7 @@ spec:
       - name: devops-8268-ecr
       containers:
       - name: nginx
-        image: 826846563965.dkr.ecr.ap-northeast-2.amazonaws.com/watchcon:latest
+        image: 826846563965.dkr.ecr.ap-northeast-2.amazonaws.com/watchcon:13
         ports:
         - containerPort: 80        
         resources:
