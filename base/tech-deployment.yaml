@@ -15,10 +15,10 @@ spec:
         app: nginx
     spec:
       imagePullSecrets:
-      - name: nky
+      - name: devops-8268-ecr
       containers:
       - name: nginx
-        image: repo.nky.wjcloud.co.kr/nky/wj-tech:2.0
+        image: 826846563965.dkr.ecr.ap-northeast-2.amazonaws.com/watchcon:13
         ports:
         - containerPort: 80        
         resources:
