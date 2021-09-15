@@ -19,7 +19,6 @@ metadata:
     
 spec:
   rules:
-    - host: tech.nky.wjcloud.co.kr
       http:
          paths:
           - path: /*
