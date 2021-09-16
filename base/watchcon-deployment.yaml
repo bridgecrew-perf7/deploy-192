@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tech-deployment
+  name: watchcon-deployment
   labels:
-    app: nginx
+    app: watchcon
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: watchcon
   template:
     metadata:
       labels:
-        app: nginx
+        app: watchcon
     spec:
       imagePullSecrets:
       - name: devops-8268-ecr
       containers:
-      - name: nginx
+      - name: watchcon
         image: 826846563965.dkr.ecr.ap-northeast-2.amazonaws.com/watchcon:13
         ports:
         - containerPort: 80        

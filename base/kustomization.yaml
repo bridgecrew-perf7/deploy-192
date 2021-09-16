@@ -1,7 +1,7 @@
 resources:
-- tech-deployment.yaml
-- tech-service.yaml
-- tech-ingress.yaml
-- tech-hpa.yaml
+- watchcon-deployment.yaml
+- watchcon-service.yaml
+- watchcon-ingress.yaml
+- watchcon-hpa.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization

@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: tech-ingress
+  name: watchcon-ingress
   labels:
      app: external-ingress
   annotations:
@@ -19,7 +19,7 @@ metadata:
     
 spec:
   rules:
-    - host: tech.nky.wjcloud.co.kr
+    - host: watchcon.nky.wjcloud.co.kr
       http:
          paths:
           - path: /*
@@ -28,5 +28,5 @@ spec:
               servicePort: use-annotation
           - path: /*
             backend:
-              serviceName: tech-service
+              serviceName: watchcon-service
               servicePort: 80
