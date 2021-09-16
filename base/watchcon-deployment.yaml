@@ -20,7 +20,7 @@ spec:
       - name: watchcon
         image: 826846563965.dkr.ecr.ap-northeast-2.amazonaws.com/watchcon:13
         ports:
-        - containerPort: 80        
+        - containerPort: 8080     
         resources:
          requests:
            cpu: "500m"
