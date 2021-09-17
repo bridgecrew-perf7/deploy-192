@@ -15,10 +15,10 @@ spec:
         app: watchcon
     spec:
       imagePullSecrets:
-      - name: devops-8268-ecr
+      - name: nky
       containers:
       - name: watchcon
-        image: 826846563965.dkr.ecr.ap-northeast-2.amazonaws.com/watchcon:13
+        image: repo.nky.wjcloud.co.kr/nky/watchcon:build_version
         ports:
         - containerPort: 8080     
         resources:
