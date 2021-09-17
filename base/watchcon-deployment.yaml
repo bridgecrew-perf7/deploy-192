@@ -18,7 +18,7 @@ spec:
       - name: nky
       containers:
       - name: watchcon
-        image: repo.nky.wjcloud.co.kr/nky/watchcon:build_version
+        image: repo.nky.wjcloud.co.kr/nky/wj-watchcon:build_version
         ports:
         - containerPort: 8080     
         resources:
