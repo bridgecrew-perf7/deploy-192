@@ -41,7 +41,7 @@ spec:
             cpu: 500m
             memory: 1Gi
       imagePullSecrets:
-      - name: devops-8268-ecr
+      - name: nky
 ---
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
