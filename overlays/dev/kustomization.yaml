@@ -3,5 +3,7 @@ resources:
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
+- name: repo.nky.wjcloud.co.kr/nky/wj-tech
+  newTag: "2.0"
 - name: repo.nky.wjcloud.co.kr/nky/wj-watchcon
   newTag: "2.0"
